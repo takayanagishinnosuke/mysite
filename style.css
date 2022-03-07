@@ -70,7 +70,7 @@ section {
   background: transparent;
   box-shadow: 729px 136px #FFF , 1927px 1602px #FFF , 1054px 1985px #FFF , 1862px 1611px #FFF , 1933px 1369px #FFF , 1284px 834px #FFF , 703px 975px #FFF , 1813px 421px #FFF , 1688px 1134px #FFF , 644px 797px #FFF , 999px 1245px #FFF , 94px 182px #FFF , 775px 922px #FFF , 696px 1130px #FFF , 559px 1834px #FFF , 338px 200px #FFF , 1645px 1786px #FFF , 1356px 1925px #FFF , 467px 1233px #FFF , 711px 414px #FFF , 1051px 1258px #FFF , 367px 1196px #FFF , 796px 1020px #FFF , 1146px 1646px #FFF , 1579px 391px #FFF , 1710px 163px #FFF , 758px 40px #FFF , 208px 517px #FFF , 577px 744px #FFF , 1626px 1552px #FFF , 1133px 1652px #FFF , 1711px 1985px #FFF , 1699px 911px #FFF , 775px 941px #FFF , 1920px 1305px #FFF , 170px 642px #FFF , 554px 1852px #FFF , 1006px 292px #FFF , 906px 663px #FFF , 420px 1031px #FFF , 668px 1105px #FFF , 150px 79px #FFF , 1230px 367px #FFF , 728px 1842px #FFF , 1530px 569px #FFF , 1877px 688px #FFF , 1701px 1929px #FFF , 273px 1893px #FFF , 677px 1550px #FFF , 1533px 1824px #FFF , 1098px 842px #FFF , 908px 287px #FFF , 1318px 643px #FFF , 1777px 132px #FFF , 1515px 748px #FFF , 976px 1536px #FFF , 229px 563px #FFF , 424px 1977px #FFF , 827px 1418px #FFF , 265px 1818px #FFF , 800px 1275px #FFF , 162px 96px #FFF , 1535px 1907px #FFF , 769px 944px #FFF , 1364px 859px #FFF , 954px 1847px #FFF , 1783px 1876px #FFF , 622px 665px #FFF , 817px 1323px #FFF , 1949px 1810px #FFF , 1910px 1410px #FFF , 743px 317px #FFF , 1547px 1433px #FFF , 1706px 1959px #FFF , 1961px 584px #FFF , 1091px 794px #FFF , 497px 20px #FFF , 1459px 1047px #FFF , 922px 696px #FFF , 1798px 877px #FFF , 171px 983px #FFF , 1887px 121px #FFF , 1112px 171px #FFF , 107px 404px #FFF , 1097px 714px #FFF , 1875px 1772px #FFF , 1852px 272px #FFF , 1434px 1931px #FFF , 1194px 403px #FFF , 71px 607px #FFF , 1844px 528px #FFF , 1051px 168px #FFF , 1837px 1214px #FFF , 1584px 468px #FFF , 1943px 1456px #FFF , 1018px 1640px #FFF , 964px 713px #FFF , 1269px 1803px #FFF , 1260px 658px #FFF , 110px 1815px #FFF;
 }
-
+/* タイトル位置 */
 .title {
   position: absolute;
   top: 30%;
@@ -102,36 +102,79 @@ section {
 }
 
 /* ここからタイトルの文字変化 */
-span{
-  animation: blur 8s ease-in-out  ;
-  -webkit-animation: blur 8s ease-in-out ;
+.title h1{
+  animation: blur 8s ease-in-out forwards ;
 
   /* スクロールしたらフェードアウトするにする */
-  animation-fill-mode: forwards; 
-  --webkit-animation-fill-mode: forwards;
+  /* animation-fill-mode: forwards;  */
 }
-  
+  /* 出現 */
 @keyframes blur {
   0%{text-shadow:  0 0 100px #fff; opacity:0;}
   5%{text-shadow:  0 0 90px #fff;}
-  15%{opacity: 1;}
-  20%{text-shadow:  0 0 0px #fff;}
-  80%{text-shadow:  0 0 0px #fff;}
-  85%{opacity: 1;}
-  95%{text-shadow:  0 0 90px #fff;}
-  100%{text-shadow:  0 0 100px #fff; opacity:0;}
+  15%{text-shadow:  0 0 30px #fff;}
+  25%{text-shadow:  0 0 0px #fff; opacity: 1;}
+  70%{text-shadow:  0 0 40px #fff;}
+  80%{text-shadow:  0 0 20px #fff;}
+  85%{text-shadow:  0 0 0px #fff;}
+  95%{text-shadow:  0 0 0px #fff;}
+  100%{text-shadow:  0 0 0px #fff; opacity:1;}
   }
-  
-@-webkit-keyframes blur {
-  0%{text-shadow:  0 0 100px #fff; opacity:0;}
+  /* 消失 */
+@keyframes blure {
+  0%{text-shadow:  0 0 100px #fff;}
   5%{text-shadow:  0 0 90px #fff;}
-  15%{opacity: 1;}
-  20%{text-shadow:  0 0 0px #fff;}
-  80%{text-shadow:  0 0 0px #fff;}
-  85%{opacity: 1;}
+  20%{text-shadow:  0 0 40px #fff;}
+  80%{text-shadow:  0 0 20px #fff;}
   95%{text-shadow:  0 0 90px #fff;}
   100%{text-shadow:  0 0 100px #fff; opacity:0;}
   }
+
+  /*ここからscroll*/
+  .scrolldown{
+    position: absolute;
+    left: 50%;
+    top: 65%;  
+  } 
+
+  /* 線の描写  */
+  .scrolldown:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    /* 線の形状 */
+    width: 1px;
+    height: 40px;
+    background: rgb(255, 255, 255,0.5);
+    /* 線の動き1.4秒かけて動く。ループ */
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0;
+  }
+
+  /* 線のアニメーション */
+  @keyframes pathmove{
+    0%{
+      height: 0;
+      top: 0;
+      opacity: 0;
+    }
+    30%{
+      height: 30px;
+      opacity: 1;  
+    }
+
+    50%{
+      height: 50px;
+      opacity: 1;
+    }
+    100%{
+      height: 0;
+      top:50px;
+      opacity: 0;
+    }
+  }
+
+
 
   /* ここからabout */
 .container{
@@ -145,7 +188,7 @@ span{
     text-align: center;
     color: #FFF;
 }
-/* 後でホバーアクション入れる */
+/* ふわふわ光らせる */
 .fadeUp{
   animation-name:fadeUpanime;
   animation-duration: 10s;
@@ -165,7 +208,6 @@ span{
   80%{text-shadow:  0 0 20px #fff;}
   100%{text-shadow:  0 0 0px #fff;}
   }
-  
 
 .container p{
   letter-spacing: 0.12em;
