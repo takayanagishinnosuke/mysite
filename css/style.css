@@ -280,6 +280,9 @@ a{
   #title-h1{
     font-size: 45px;
   }
+  .area img{
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 480px){
@@ -287,6 +290,13 @@ a{
     font-size: 20px;
   }
 
+  .Last{
+    width: 100px;
+  }
+
+  .Last p{
+    font-size: 12px;
+  }
 
   #fadeUp h1{
     font-size: 15px;
@@ -295,7 +305,7 @@ a{
     font-size: 10px;
   }
   .area img{
-    width: 50%;
+    width: 70%;
   }
 }
   
