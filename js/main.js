@@ -13,20 +13,12 @@ window.addEventListener('scroll',()=>{
   // console.log(scroll_position);
   if (scroll_position >=300){//もし画面座標がlineより小さくなったら、cssへ要素を追加
     titleH1.style.animation = 'blure 3s ease-in-out forwards';
+    scrollDown.style.display = 'none';
   }
   else {//300以下になったら戻す
     titleH1.style.animation = 'blur 8s ease-in-out forwards';
-  }
-})
-
-//スクロール位置によってscrolldwunを消したり戻したりする処理
-window.addEventListener('scroll',()=>{
-  scroll_position = window.pageYOffset;
-  console.log(scroll_position);
-  if(scroll_position >= 5300){
-    scrollDown.style.display = 'none';
-  }
-  else{
     scrollDown.style.display = 'inline';
   }
 })
+
+

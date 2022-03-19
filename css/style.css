@@ -21,6 +21,7 @@ section {
 }
 
 .stars {
+  margin: 0;
   width: 1px;
   height: 1px;
   background: transparent;
@@ -38,6 +39,7 @@ section {
 }
 
 .stars2 {
+  margin: 0;
   width: 2px;
   height: 2px;
   background: transparent;
@@ -55,6 +57,7 @@ section {
 }
 
 .stars3 {
+  margin: 0;
   width: 3px;
   height: 3px;
   background: transparent;
@@ -104,6 +107,7 @@ section {
 /* ここからタイトルの文字変化 */
 .title h1{
   animation: blur 8s ease-in-out forwards ;
+  margin: 0;
 
   /* スクロールしたらフェードアウトするにする */
   /* animation-fill-mode: forwards;  */
@@ -189,25 +193,20 @@ section {
     color: #FFF;
 }
 /* ふわふわ光らせる */
-.fadeUp{
-  animation-name:fadeUpanime;
-  animation-duration: 10s;
+#fadeUp{
+  /* animation-name:fadeupanime;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-direction: normal;
-  animation-fill-mode:forwards; 
-  animation-timing-function: ease-in-out;
+  animation-fill-mode:normal; 
+  animation-timing-function: normal;
+  animation-direction: normal; */
+  text-shadow: 0 0 25px #FFF;
 }
 
-@keyframes fadeUpanime {
-  0%{text-shadow:  0 0 20px #fff;}
-  5%{text-shadow:  0 0 30px #fff;}
-  10%{text-shadow: 0 0 10px #fff}
-  20%{text-shadow:  0 0 0px #fff;}
-  50%{text-shadow:  0 0 20px #fff;}
-  65%{text-shadow:  0 0  0px #fff;}
-  80%{text-shadow:  0 0 20px #fff;}
-  100%{text-shadow:  0 0 0px #fff;}
-  }
+/* @keyframes fadeupanime {
+  30%{text-shadow:none;}
+} */
 
 .container p{
   letter-spacing: 0.12em;
@@ -216,6 +215,9 @@ section {
 
 /* ここから紹介 */
 
+a{
+  color: azure;
+}
 
 .area img{
   width: 30%;
@@ -268,6 +270,35 @@ section {
   width: 100%;
   text-align: center;
 }
+
+.luxy-el p{
+  line-height: 2.0;
+
+}
+
+@media screen and (max-width:959px){
+  #title-h1{
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  #title-h1{
+    font-size: 20px;
+  }
+
+
+  #fadeUp h1{
+    font-size: 15px;
+  }
+  #fadeUp p{
+    font-size: 10px;
+  }
+  .area img{
+    width: 50%;
+  }
+}
+  
 
 
 
